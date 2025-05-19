@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      text-align: center;
+    }
+    .top-icons {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+    .top-icons img {
+      filter: brightness(0) saturate(100%) invert(84%) sepia(47%) saturate(2061%) hue-rotate(8deg) brightness(105%) contrast(101%);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    img.gallery-img {
+      border: 3px solid #ffd700;
+      border-radius: 10px;
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-icons">
+    <img src="https://img.icons8.com/ios-filled/50/home.png" onclick="window.location.href='index.html'" title="Inicio">
+  </div>
+
+  <img id="galeria" class="gallery-img" src="foto1.jpg" alt="Galería Sexy">
+
+  <script>
+    const fotos = ["foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg","foto6.jpg","foto7.jpg","foto8.jpg"];
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % fotos.length;
+      document.getElementById("galeria").src = fotos[index];
+    }, 3000);
+  </script>
+
+</body>
+</html>
